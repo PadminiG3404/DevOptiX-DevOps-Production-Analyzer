@@ -80,8 +80,9 @@ def run():
     plot_developer_stage_heatmap(bottlenecks)
 
     plot_stage_distribution(
-        metrics, os.path.join(OUTPUT_DIR, "pr_review_time_distribution.png")
+        metrics, "pr_review_time", save_path="pr_review_time.png"
     )
+
     plot_bottleneck_counts(
         bottlenecks, os.path.join(OUTPUT_DIR, "bottleneck_counts.png")
     )
