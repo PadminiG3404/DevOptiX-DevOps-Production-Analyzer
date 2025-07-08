@@ -95,9 +95,7 @@ All outputs are saved in the `outputs/` directory:
 - `lead_time_trend.png`: Sprint-based lead time changes  
 - `developer_stage_heatmap.png`: Developer-stage bottleneck heatmap  
 
----
-
-### 📌 Sample Output
+### 📌 Sample Output & Visualizations🖼️ 
 
 ```yaml
 🔧 Generating synthetic data...
@@ -116,7 +114,7 @@ All outputs are saved in the `outputs/` directory:
 [EXPORT] JSON data exported to outputs\trend_regressions.json
 [EXPORT] JSON data exported to outputs\anomalies.json
 📊 Plotting insights...
-[VISUAL] Saved plot to pr_review_time.png
+[VISUAL] Saved plot to outputs\pr_review_time.png
 [VISUAL] Saved bottleneck plot to outputs\bottleneck_counts.png
 [VISUAL] Saved DORA metrics plot to outputs\dora_metrics.png
 [VISUAL] Saved plot to outputs\bottlenecks_by_stage_and_team.png
@@ -132,6 +130,45 @@ All outputs are saved in the `outputs/` directory:
    mean_time_to_restore_hours: 1.59
 
 ```
+
+Here are a few examples of the visual insights DevOptiX generates:
+
+## 🖼️ Output Visualizations
+
+### 📊 PR Review Time Distribution
+<p align="center">
+  <img width="600" src="https://github.com/user-attachments/assets/b17bd248-d6e8-4ee6-bb1a-e8d0d005a420">
+</p>
+
+### 🔁 Bottlenecks by Stage
+<p align="center">
+  <img width="600" src="https://github.com/user-attachments/assets/6eeaece3-5c5a-4b8b-830e-27a82c5f2df3">
+</p>
+
+### 📈 DORA Metrics Overview
+<p align="center">
+  <img width="600" src="https://github.com/user-attachments/assets/dab81833-a78f-4686-99e5-37dc0002e967">
+</p>
+
+### 🏗️ Bottlenecks by Stage and Team
+<p align="center">
+  <img width="600" src="https://github.com/user-attachments/assets/d0f86400-7a5f-4317-a4ec-adf67e945f3f">
+</p>
+
+### ⏱️ Average PR Review Time by Team
+<p align="center">
+  <img width="600" src="https://github.com/user-attachments/assets/29e6ca44-37eb-4ea5-9622-e57499a13f90">
+</p>
+
+### 📉 Lead Time Trends Across Sprints
+<p align="center">
+  <img width="600" src="https://github.com/user-attachments/assets/dda5f495-7422-41e0-a10b-a3ffbd4f29d7">
+</p>
+
+### 🔥 Developer-Stage Bottleneck Heatmap
+<p align="center">
+  <img width="600" src="https://github.com/user-attachments/assets/b3a5dfc4-6de6-45c2-bd6c-ad86826c1d23">
+</p>
 
 ---
 
