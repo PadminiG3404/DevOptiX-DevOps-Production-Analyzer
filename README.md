@@ -2,6 +2,10 @@
 
 DevOptiX is a modular and intelligent system for analyzing software development and deployment workflows to identify productivity bottlenecks and suggest data-driven improvements. It supports core DevOps and DORA metrics, detects bottlenecks, recommends improvements, visualizes trends, and integrates DORA metrics for high-performance insights. It is built to be extended with real-time integrations and ML-powered insights.
 
+For a complete deep-dive into the workflow, technologies, and architecture behind **DevOptiX**, refer to the detailed documentation below:
+
+👉 [DevOptiX – Documentation (Google Doc)](https://docs.google.com/document/d/1XdxG8vV5jhz7RWJXluVqa3Ji5Lcsx870w4FyKVJ1VrM/edit?usp=sharing)
+
 ---
 
 ## 📌 Features
@@ -25,6 +29,24 @@ DevOptiX is a modular and intelligent system for analyzing software development 
 
 DevOptiX analyzes DevOps workflows to surface bottlenecks, optimize delivery pipelines, and improve engineering performance using data-driven insights.
 
+### Architecture
+
+```
+[Task Generator] 
+      ↓
+[Metrics Computation] 
+      ↓
+[Bottleneck Detection] ──┐
+      ↓                  │
+[Recommendation Engine]  │
+      ↓                  ↓
+[DORA Analysis]     [Visualization Layer]
+      ↓                  ↓
+[Trend + Anomaly Detection]
+      ↓
+[Export Layer] (JSON, CSV, TXT, PNG)
+```
+
 ### Core Technologies
 
 - **Python** for orchestration and logic  
@@ -35,7 +57,6 @@ DevOptiX analyzes DevOps workflows to surface bottlenecks, optimize delivery pip
 - **Modular architecture** for extensibility and integration  
 
 ### Workflow Summary
-
 
 - **Synthetic Data Generation**  
   Simulates DevOps tasks with timestamps, teams, stages, and sprints.
@@ -64,6 +85,11 @@ DevOptiX analyzes DevOps workflows to surface bottlenecks, optimize delivery pip
 
 - **Export System**  
   All outputs (`.csv`, `.json`, `.txt`, `.png`) are saved in an organized `outputs/` directory.
+
+
+For a complete deep-dive into the workflow, technologies, and architecture behind **DevOptiX**, refer to the detailed documentation below:
+
+👉 [DevOptiX – Documentation (Google Doc)](https://docs.google.com/document/d/1XdxG8vV5jhz7RWJXluVqa3Ji5Lcsx870w4FyKVJ1VrM/edit?usp=sharing)
 
 ---
 
