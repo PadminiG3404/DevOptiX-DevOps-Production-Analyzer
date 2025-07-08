@@ -6,18 +6,64 @@ DevOptiX is a modular and intelligent system for analyzing software development 
 
 ## 📌 Features
 
-- 🔍 Workflow bottleneck detection (PR reviews, builds, deployments, etc.)
-- 📈 DORA Metrics computation:
+- Workflow bottleneck detection (PR reviews, builds, deployments, etc.)
+- DORA Metrics computation:
   - Deployment Frequency
   - Lead Time for Changes
   - Change Failure Rate (simulated)
   - Mean Time to Recovery (simulated)
-- 🤖 Recommendation Engine for team/process improvements
-- 📊 Visual analytics (histograms, bottleneck trends)
-- 🧪 Synthetic data generation for demo/testing
-- 📦 Modular Python architecture
-- ✅ Ready for real-time tool integration (GitHub, Jenkins, etc.)
-- 🖥️ Streamlit UI (planned)
+- Recommendation Engine for team/process improvements
+- Visual analytics (histograms, bottleneck trends)
+- Synthetic data generation for demo/testing
+- Modular Python architecture
+- Ready for real-time tool integration (GitHub, Jenkins, etc.)
+- Streamlit UI (planned)
+
+---
+
+## ⚙️ How DevOptiX Works
+
+DevOptiX analyzes DevOps workflows to surface bottlenecks, optimize delivery pipelines, and improve engineering performance using data-driven insights.
+
+### Core Technologies
+
+- **Python** for orchestration and logic  
+- **Pandas & NumPy** for data processing  
+- **Matplotlib & Seaborn** for visualizations  
+- **Scikit-learn** for anomaly detection (Isolation Forest)  
+- **Synthetic data generation** for simulating DevOps activity  
+- **Modular architecture** for extensibility and integration  
+
+### Workflow Summary
+
+
+- **Synthetic Data Generation**  
+  Simulates DevOps tasks with timestamps, teams, stages, and sprints.
+
+- **Metrics Calculation**  
+  Computes task durations across pipeline stages and DORA metrics:  
+  - Deployment Frequency  
+  - Lead Time  
+  - Change Failure Rate  
+  - Mean Time to Restore
+
+- **Bottleneck Detection**  
+  Flags delayed pipeline stages across tasks using threshold logic.
+
+- **Recommendation Engine**  
+  Generates stage-level improvement tips and DORA-based insights.
+
+- **Trend & Sprint Analysis**  
+  Analyzes sprint-wise changes in performance and lead times.
+
+- **Anomaly Detection (ML)**  
+  Detects unusual task patterns using unsupervised learning (Isolation Forest).
+
+- **Visual Insight Generation**  
+  Auto-generates charts for stage trends, bottlenecks, team-level slowdowns, and developer heatmaps.
+
+- **Export System**  
+  All outputs (`.csv`, `.json`, `.txt`, `.png`) are saved in an organized `outputs/` directory.
 
 ---
 
@@ -73,20 +119,20 @@ python main.py
 
 All outputs are saved in the `outputs/` directory:
 
-### 🔢 Metrics
+### Metrics
 - `metrics.csv`: All computed metrics per task  
 - `dora_metrics.txt`: Overall DORA metrics summary  
 
-### 📦 Bottlenecks & Recommendations
+### Bottlenecks & Recommendations
 - `bottlenecks.json`: Tasks with bottleneck stages  
 - `task_recommendations.json` / `.txt`: Optimization suggestions  
 - `dora_recommendations.json` / `.txt`: DORA-based team guidance  
 
-### 🧠 Analysis & Trends
+### Analysis & Trends
 - `trend_regressions.json`: Stage trends over time  
 - `anomalies.json`: Detected anomalies in performance  
 
-### 📈 Visual Reports
+### Visual Reports
 - `pr_review_time.png`: PR review time distribution  
 - `bottleneck_counts.png`: Bottleneck frequency by stage  
 - `dora_metrics.png`: Bar chart of DORA metrics  
@@ -95,7 +141,7 @@ All outputs are saved in the `outputs/` directory:
 - `lead_time_trend.png`: Sprint-based lead time changes  
 - `developer_stage_heatmap.png`: Developer-stage bottleneck heatmap  
 
-### 📌 Sample Output & Visualizations🖼️ 
+### Sample Output & Visualizations
 
 ```yaml
 🔧 Generating synthetic data...
@@ -135,37 +181,37 @@ Here are a few examples of the visual insights DevOptiX generates:
 
 ## 🖼️ Output Visualizations
 
-### 📊 PR Review Time Distribution
+### PR Review Time Distribution
 <p align="center">
   <img width="600" src="https://github.com/user-attachments/assets/b17bd248-d6e8-4ee6-bb1a-e8d0d005a420">
 </p>
 
-### 🔁 Bottlenecks by Stage
+### Bottlenecks by Stage
 <p align="center">
   <img width="600" src="https://github.com/user-attachments/assets/6eeaece3-5c5a-4b8b-830e-27a82c5f2df3">
 </p>
 
-### 📈 DORA Metrics Overview
+### DORA Metrics Overview
 <p align="center">
   <img width="600" src="https://github.com/user-attachments/assets/dab81833-a78f-4686-99e5-37dc0002e967">
 </p>
 
-### 🏗️ Bottlenecks by Stage and Team
+### Bottlenecks by Stage and Team
 <p align="center">
   <img width="600" src="https://github.com/user-attachments/assets/d0f86400-7a5f-4317-a4ec-adf67e945f3f">
 </p>
 
-### ⏱️ Average PR Review Time by Team
+### Average PR Review Time by Team
 <p align="center">
   <img width="600" src="https://github.com/user-attachments/assets/29e6ca44-37eb-4ea5-9622-e57499a13f90">
 </p>
 
-### 📉 Lead Time Trends Across Sprints
+### Lead Time Trends Across Sprints
 <p align="center">
   <img width="600" src="https://github.com/user-attachments/assets/dda5f495-7422-41e0-a10b-a3ffbd4f29d7">
 </p>
 
-### 🔥 Developer-Stage Bottleneck Heatmap
+### Developer-Stage Bottleneck Heatmap
 <p align="center">
   <img width="600" src="https://github.com/user-attachments/assets/b3a5dfc4-6de6-45c2-bd6c-ad86826c1d23">
 </p>
