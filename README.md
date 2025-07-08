@@ -45,8 +45,8 @@ DevOptiX/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/DevOptiX.git
-cd DevOptiX
+git clone  https://github.com/PadminiG3404/DevOptiX-DevOps-Production-Analyzer.git
+cd DevOptiX-DevOps-Production-Analyzer
 ```
 
 ### 2. Create virtual environment (optional but recommended)
