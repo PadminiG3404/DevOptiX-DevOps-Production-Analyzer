@@ -15,6 +15,7 @@ def generate_synthetic_tasks(num_tasks: int = 100) -> List[DevOpsTask]:
         ticket_id = f"TASK-{i + 1}"
         developer = random.choice(devs)
         team = random.choice(teams)
+        sprint = i // 10  # Every 10 tasks belong to one sprint
 
         # Start time for task (spread over 10 working days)
         created_at = base_time + timedelta(minutes=random.randint(0, 60 * 24 * 10))
@@ -45,7 +46,8 @@ def generate_synthetic_tasks(num_tasks: int = 100) -> List[DevOpsTask]:
             build_started_at=build_started_at,
             deployed_at=deployed_at,
             deployment_success=deployment_success,
-            restore_time=restore_time
+            restore_time=restore_time,
+            sprint=sprint
         )
 
         tasks.append(task)
@@ -60,9 +62,10 @@ def export_to_csv(tasks: List[DevOpsTask], filename: str = "synthetic_tasks.csv"
         for task in tasks:
             writer.writerow([getattr(task, field) for field in task.__dataclass_fields__])
 
+
 if __name__ == "__main__":
     from pprint import pprint
 
-    tasks = generate_synthetic_tasks(5)  # Try small first
+    tasks = generate_synthetic_tasks(1000)
     for task in tasks:
         pprint(task)

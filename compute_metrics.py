@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from datetime import timedelta
+from datetime import datetime,timedelta
 from typing import List
 from models import DevOpsTask
 
@@ -8,6 +8,10 @@ class DevOpsMetrics:
     ticket_id: str
     developer: str
     team: str
+    sprint: int
+
+    first_commit_at: datetime
+    deployed_at: datetime
 
     lead_time: timedelta
     cycle_time: timedelta
@@ -24,6 +28,10 @@ def compute_metrics_for_task(task: DevOpsTask) -> DevOpsMetrics:
         ticket_id=task.ticket_id,
         developer=task.developer,
         team=task.team,
+        sprint=task.sprint,
+
+        first_commit_at=task.first_commit_at,
+        deployed_at=task.deployed_at,
 
         lead_time=task.deployed_at - task.created_at,
         cycle_time=task.deployed_at - task.in_progress_at,
@@ -48,20 +56,21 @@ def compute_dora_metrics(tasks: List[DevOpsTask]) -> dict:
 
     # Deployment Frequency
     deploy_dates = [task.deployed_at.date() for task in tasks]
-    deployments_per_day = len(deploy_dates) / len(set(deploy_dates))
+    unique_days = len(set(deploy_dates))
+    deployments_per_day = len(deploy_dates) / unique_days if unique_days else 0
 
     # Lead Time for Changes
     lead_times = [(task.deployed_at - task.first_commit_at).total_seconds() / 3600 for task in tasks]
     avg_lead_time_hrs = sum(lead_times) / len(lead_times)
 
     # Change Failure Rate
-    failed_deploys = [task for task in tasks if not task.deployment_success]
-    change_failure_rate = len(failed_deploys) / len(tasks)
+    failed_deploys = [task for task in tasks if not getattr(task, 'deployment_success', True)]
+    change_failure_rate = len(failed_deploys) / len(tasks) if tasks else 0
 
     # Mean Time to Restore
     restore_durations = [
         (task.restore_time - task.deployed_at).total_seconds() / 3600
-        for task in failed_deploys if task.restore_time
+        for task in failed_deploys if getattr(task, 'restore_time', None)
     ]
     mttr = sum(restore_durations) / len(restore_durations) if restore_durations else 0
 

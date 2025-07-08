@@ -23,4 +23,5 @@ class DevOpsTask:
     test_passed: Optional[bool] = True
     deployment_successful: Optional[bool] = True
     incident_reported: Optional[bool] = False
+    sprint: Optional[int] = None
 
